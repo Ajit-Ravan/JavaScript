@@ -1,8 +1,8 @@
-// document.getElementById("count_el").innerText = 5;
+//document.getElementById("count_el").innerText = 5;
 
 let count = 0;
 
-let countEl = document.getElementById("count_el")
+let countEl = document.getElementById("count_el")  //pass in argument
 function increment()
 {
     console.log("clicked");
@@ -11,3 +11,10 @@ function increment()
     console.log(count);
     
 }
+
+function save()
+{
+    console.log("save button is clicked");
+}
+
+ 
