@@ -1,0 +1,19 @@
+.div-apple{
+    background-color:rgb(230, 197, 197) ;
+    height: 20px;
+    width: 150px;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+.div-orange{
+    background-color: rgb(31, 21, 4);
+    height: 20px;
+    width: 150px;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
