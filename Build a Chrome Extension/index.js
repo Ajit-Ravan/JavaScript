@@ -36,22 +36,24 @@ tabBtn.addEventListener("click", function () {
 
 function render(leads) {
   let listItems = "";
-  for (let i = 0; i < leads.length; i++) {
-    // ulEl.innerHTML += " <li>"+ myLeads[i] +"</li>";      // use innerHtml in the place of textContent so it will not print the html tags along with array elements `
-    //listItems += "<li> <a target= '_blank' href='"+ myLeads[i]+"'>" + myLeads[i] + "</a></li>";            //passing list + values to the listItem string
-    //instead of this we can use template string using
-    //CONVERT NORMAL STRING TO THE TEMPLATE STRING USING BACKSTICK ` `  SO WE CAN WRITE HTML CODE AS WE WRITE IN HTML PAGE
-    listItems += ` 
+  if (leads !== undefined) {
+    for (let i = 0; i < leads.length; i++) {
+      // ulEl.innerHTML += " <li>"+ myLeads[i] +"</li>";      // use innerHtml in the place of textContent so it will not print the html tags along with array elements `
+      //listItems += "<li> <a target= '_blank' href='"+ myLeads[i]+"'>" + myLeads[i] + "</a></li>";            //passing list + values to the listItem string
+      //instead of this we can use template string using
+      //CONVERT NORMAL STRING TO THE TEMPLATE STRING USING BACKSTICK ` `  SO WE CAN WRITE HTML CODE AS WE WRITE IN HTML PAGE
+      listItems += ` 
         <li>
             <a target= '_blank' href='${leads[i]}'>
              ${leads[i]}</a>
         </li>
           `;
 
-    //we can also use createElement and append like this
-    //   const li = document.createElement("li"); //this is creating list element like this ......<li> </li>
-    //   li.textContent = myLeads[i]; //set textContent of li as array elements
-    //   ulEl.append(li); //append the li to the ul list
+      //we can also use createElement and append like this
+      //   const li = document.createElement("li"); //this is creating list element like this ......<li> </li>
+      //   li.textContent = myLeads[i]; //set textContent of li as array elements
+      //   ulEl.append(li); //append the li to the ul list
+    }
   }
 
   ulEl.innerHTML = listItems; //set all listItems in ul list
