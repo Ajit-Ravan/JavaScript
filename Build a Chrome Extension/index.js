@@ -16,16 +16,22 @@ if (leadsFromLocalStorage) {
   render();
 }
 
-  //given tab url render to the page 
-const tab = [{ url: "https://www.linkedin.com/in/ajit09/" }];
+//   //given tab url render to the page 
+// const tab = [{ url: "https://www.linkedin.com/in/ajit09/" }]; //WE DONT NEED THIS HARDCODED VARIBALE BECAUSE WE WILL PASS TAB VARIABLE THROUGH CHROME API
 
 tabBtn.addEventListener("click", function () {
-  // console.log(tab[0].url);           //tab[0] is object and tab[0].url get the values in the tab array
+  //GRAB THE URL OF THE CURRENT TAB USIGN CHROME API
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {        //active means active tab and currentwindow means current open window of browser
+    // console.log(tab[0].url);           //tab[0] is object and tab[0].url get the values in the tab array
 
-  myLeads.push(tab[0].url);              //save the url in the myLead array
-  //save the myLeads array to local storage 
-  localStorage.setItem("myLeads", JSON.stringify(myLeads));
-  render(myLeads);
+    myLeads.push(tabs[0].url); //save the url in the myLead array
+    //save the myLeads array to local storage
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
+  })
+  
+
+
 });
 
 function render(leads) {
